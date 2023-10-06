@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandigarh University Student Gallery</title>
+    <!-- Set website icon -->
+    <link rel="icon" href="images/icon.jpeg" type="image/png" sizes="16x16">
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Set a proper body font and background */
+        body {
+            font-family: 'Google Sans', sans-serif;
+            background: linear-gradient(to bottom, #f9f7f7, #f6f6f6);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style the header with a gradient background and white text */
+        header {
+            background: linear-gradient(45deg, #007acc, #00b4d8, #007acc);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative; /* Relative position to allow absolute positioning of animation layer */
+        }
+
+        /* Style the logo image */
+        .logo {
+            width: 50px;
+            height: auto;
+            margin-left: 30px;
+            border-radius: 7px;
+            position: absolute;
+            top: 10px; /* Adjust the top position as needed */
+            left: 20px; /* Adjust the left position as needed */
+        }
+
+        /* Style the main content container */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        /* Style individual student cards */
+        .student-card {
+            width: 300px;
+            margin: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .student-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .student-card img {
+            width: 100%;
+            border-radius: 5px;
+            height: auto;
+        }
+
+        .student-card h3 {
+            margin-top: 10px;
+            font-size: 1.5rem;
+        }
+
+        .student-card p {
+            margin-top: 5px;
+        }
+
+        /* Style the student video container */
+        .student-video {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .student-video video {
+            width: 50%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .student-video h3 {
+            margin-top: 10px;
+            font-size: 1.5rem;
+        }
+
+        .student-video p {
+            margin-top: 4px;
+        }
+
+        .student-video:hover {
+            transform: scale(1.05);
+            box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Background animation layer */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Allow mouse events to pass through */
+            background: radial-gradient(circle, transparent 5%, rgba(30, 30, 30, 0.1) 50%); /* Define animation pattern */
+            animation: animateBackground 3s linear infinite;
+        }
+
+        @keyframes animateBackground {
+            0% {
+                transform: scale(1.5) translate(0, 0);
+            }
+            50% {
+                transform: scale(1.2) translate(10px, 10px);
+            }
+            100% {
+                transform: scale(1.5) translate(0, 0);
+            }
+        }
+
+        /* Style the "Next Page" button */
+        .next-page-button {
+            background: linear-gradient(to bottom, #00b4d8, #007acc);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 20px;
+            transition: background-color 0.3s ease;
+            justify-content: right;
+            margin-left: 1350px;
+            
+        }
+
+        .next-page-button:hover {
+            background: linear-gradient(to bottom, #007acc, #00b4d8);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/icon.jpeg" alt="College Logo" class="logo">
+        <h1>Chandigarh University Student Gallery</h1>
+        <div class="background-animation"></div>
+    </header>
+
+    <div class="gallery-container">
+        <div class="student-card">
+            <img src="images/image1.jpeg" alt="Pranav">
+            <h3>Pranav Praveen</h3>
+            <p>Computer Science</p>
+        </div>
+
+        <div class="student-card">
+            <img src="images/image2.jpeg" alt="Rani">
+            <h3>Rani Jain</h3>
+            <p>Electrical Engineering</p>
+        </div>
+
+        <!-- Add more student cards here -->
+
+        <div class="student-card">
+            <img src="images/image 3.jpeg" alt="Aditya Kumar">
+            <h3>Aditya Kumar</h3>
+            <p>Mechanical Engineering</p>
+        </div>
+
+        <div class="student-card">
+            <img src="images/image4.jpeg" alt="Hasan">
+            <h3>Hasan</h3>
+            <p>Computer Science</p>
+        </div>
+    </div>
+
+    <div class="student-video">
+        <video src="images/a-virtual-tour-of-chandigarh-university-campus.mp4" alt="Tour" muted autoplay controls></video>
+        <h3>Campus Tour</h3>
+        <p>Explore our campus virtually</p>
+    </div>
+
+    <!-- Next Page Button -->
+     <button class="next-page-button"onclick="window.location.href='login.html'">Next Page</button>
+</body>
+</html>

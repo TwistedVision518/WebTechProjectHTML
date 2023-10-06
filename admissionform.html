@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission Form</title>
+    <link rel="icon" href="images/icon.jpeg" type="image/png" sizes="16x16">
+    <style>
+        body {
+            background: url("images/college.jpeg") no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 90px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            animation: slide-in 5s ease-in-out;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+            animation: slide-in-fwd 5s ease-in-out;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes slide-in-fwd {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .radio-container {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            animation: slide-in-left 5s ease-in-out;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes slide-in-left {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 1.0s, box-shadow 1.0s, transform 1.0s;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            animation: slide-in-bottom 5s ease-in-out;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes slide-in-bottom {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        textarea:focus {
+            border-color: #007bff;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            transform: scale(1.02);
+        }
+
+        .radio-container:hover {
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>STUDENT ADMISSION FORM</h1>
+        <form action="thankyou.html" method="post">
+            <!-- Personal Information -->
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" name="firstname" required>
+
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" required>
+
+            <label for="prnno">PRN NO.:</label>
+            <input type="text" id="prnno" name="prnno" required>
+
+            <label for="dob">D.O.B:</label>
+            <input type="text" id="dob" name="dob" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+            <label for="address">Address:</label>
+            <textarea rows="4" id="address" name="address" required></textarea>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <!-- Gender -->
+            <div class="radio-container">
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" required>
+            <label for="female">Female</label></div>
+
+            <!-- Select Courses -->
+            <div class="radio-container">
+                <label>Select Courses:</label>
+                <input type="radio" id="bca" name="courses" value="bca" required>
+                <label for="bca">BCA</label>
+
+                <input type="radio" id="bba_it" name="courses" value="bba_it" required>
+                <label for="bba_it">BBA IT</label>
+
+                <input type="radio" id="mba_it" name="courses" value="mba_it" required>
+                <label for="mba_it">MBA IT</label>
+
+                <input type="radio" id="msc_it" name="courses" value="msc_it" required>
+                <label for="msc_it">MSC IT</label>
+            </div>
+
+            <!-- Hobbies -->
+            <div class="radio-container">
+                <label>Hobbies:</label>
+                <input type="radio" id="cricket" name="hobbies" value="cricket" required>
+                <label for="cricket">Cricket</label>
+
+                <input type="radio" id="handball" name="hobbies" value="handball" required>
+                <label for="handball">Handball</label>
+
+                <input type="radio" id="football" name="hobbies" value="football" required>
+                <label for="football">Football</label>
+
+                <input type="radio" id="basketball" name="hobbies" value="basketball" required>
+                <label for="basketball">Basketball</label>
+            </div>
+
+            <!-- Submit Button -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
